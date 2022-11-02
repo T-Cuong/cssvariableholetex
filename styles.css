@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {/*tao mot bien trong css, root dc goi la 1 pseudo-class*/
+    --main-color: red;
+    --main-fs: 32px;
+}
+
+header {
+    height: 200px;
+    background-color: aqua;
+}
+
+header .title {
+    color: var( --left-side-color,var(--main, green));/*tinh nang fallback cua css variable: co nghia la khi ko truy cap dc vao bien phia truoc
+    no se truy cap vao bien phia sau*/
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content-wrapper {
+    display: flex;
+    height: 300px;
+}
+
+.left-side {
+    width: 200px;
+    background-color: greenyellow;
+    --left-side-color: yellow;/*6:12*/
+}
+
+.left-side p {
+    color: var(--main-color);
+    font-size: var(--main-fs);
+}
+
+.main-content p{
+    font-size: var(--main-fs);
+    background-color: var(--main-color);
+}
+
+footer {
+    height: 150px;
+    font-size: 24px;
+    background-color: var(--main-color);
+}
+
+footer p {
+    color: greenyellow;
+}
